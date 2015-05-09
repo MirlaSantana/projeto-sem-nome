@@ -1,6 +1,23 @@
-<p>
-	<strong> Nome: </strong>
-	<%= @language.name %>
-</p>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Linguagens: Exibindo</a>
+  </div>
+ 
 
-<%= link_to 'Voltar', languages_path%> 
+ <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+    	<li><%= link_to 'Cancelar', languages_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Nome</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @language.name %></p>
+	  </div>
+	</div>
+</div>

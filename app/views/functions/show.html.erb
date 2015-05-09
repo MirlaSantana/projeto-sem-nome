@@ -1,7 +1,24 @@
-<p>
-	<strong>Nome:</strong>
-	<%= @function.name %>
-</p>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Funçoes: Exibindo</a>
+  </div>
+ 
 
-<hr>
-<%= link_to 'Voltar', functions_path %>
+ <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+    	<li><%= link_to 'Cancelar', functions_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Nome</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @function.name %></p>
+	  </div>
+	</div>
+</div>
+

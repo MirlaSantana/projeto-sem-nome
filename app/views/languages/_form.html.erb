@@ -1,7 +1,20 @@
-<%= form_for @language, url: @path_to_save, method: 'post' do |f| %>
+<div class="container">
+	<div class="col-md-6">	
+		<%= form_for @language, url: @path_to_save, method: 'post', html: {id: 'form-ability'} do |f| %>
+		  	<div class="form-group">
+				<%= f.label :nome %>
+				<%= f.text_field :name, class: 'form-control' %>
+			</div>
+			
+			<div>
+		  		<%= f.submit 'Salvar', class: 'btn btn-success' %>
+			</div>
+		<% end %>
+	</div>
+</div>
 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-
-	<%= f.submit 'Salvar'%>
-<% end %>
+<script type="text/javascript">
+	// $("#salvar").click(function(){
+	// 	$("#form-ability").submit();
+	// });
+</script>
