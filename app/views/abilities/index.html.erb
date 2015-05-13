@@ -1,9 +1,16 @@
-<h1>Habilidades</h1>
-<hr>
-  <%= link_to 'Novo', new_ability_path %> 
-<hr>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Habilidades</a>
+  </div>
 
-<table>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Novo', new_ability_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<table class="table table-hover table-bordered">
   <thead>
     <tr>
       <th>Nome</th>
@@ -17,9 +24,15 @@
       <td><%= ability.name %></td>
       <td><%= ability.description %></td>
       <td>
-        <%= link_to 'Editar', edit_ability_path(ability.id) %>
-        <%= link_to 'Exibir', show_ability_path(ability.id) %>
-        <%= link_to 'Excluír', destroy_ability_path(ability.id) %>
+        <%= link_to edit_ability_path(ability.id), title: 'Editar' do  %>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+        <%= link_to show_ability_path(ability.id), title: 'Exibir' do  %>
+          <span class="glyphicon glyphicon-eye-open"></span>
+        <% end %>
+        <%= link_to destroy_ability_path(ability.id), title: 'Excluir' do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
       </td>
     </tr>
     <% end %>

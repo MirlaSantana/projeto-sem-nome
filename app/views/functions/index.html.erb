@@ -1,24 +1,38 @@
-<h1>Funçoes</h1>
-<hr>
-	<%= link_to "Novo", new_function_path %>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Funçoes</a>
+  </div>
 
-<table>
-	<thread>
-	<tr>
-		<th>Nome</th>
-		<th>Açoes</th>
-	</tr>
-	</thread>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+    	<li><%= link_to 'Novo', new_function_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<table class="table table-hover table-bordered">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>Açoes</th>
+		</tr>
+	</thead>
 	<tbody>
-	<% @functions.each do |function| %>
+		<% @functions.each do |function| %>
 		<tr>
 			<td><%= function.name %></td>
 			<td>
-				<%= link_to 'Editar', edit_function_path(function.id) %>
-				<%= link_to 'Exibir', show_function_path(function.id)   %>
-				<%= link_to 'Excluir', destroy_function_path(function.id)   %>
-			</td>
-		</tr>
-		<% end %>
-	</tbody>
+				<%= link_to edit_function_path(function.id), title: 'Editar' do  %>
+          			<span class="glyphicon glyphicon-pencil"></span>
+        		<% end %>
+        		<%= link_to show_function_path(function.id), title: 'Exibir' do  %>
+	          		<span class="glyphicon glyphicon-eye-open"></span>
+    		    <% end %>
+        		<%= link_to destroy_function_path(function.id), title: 'Excluir' do %>
+          			<span class="glyphicon glyphicon-trash"></span>
+        		<% end %>
+      		</td>
+    	</tr>
+    	<% end %>
+  	</tbody>
 </table>

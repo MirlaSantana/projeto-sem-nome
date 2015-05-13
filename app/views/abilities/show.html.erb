@@ -1,12 +1,23 @@
-<p>
-  <strong>Nome:</strong>
-  <%= @ability.name %>
-</p>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Habilidades: Exibindo</a>
+  </div>
+ 
 
-<p>
-  <strong>Descrição:</strong>
-  <%= @ability.description %>
-</p>
+ <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+    	<li><%= link_to 'Cancelar', abilities_path %></li>
+    </ul>
+  </div>
+</nav>
 
-<hr>
-<%= link_to 'Voltar', abilities_path %>
+<div class="container">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Nome</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @ability.name %></p>
+	  </div>
+	</div>
+</div>
