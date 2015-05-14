@@ -1,8 +1,17 @@
-<h1>Projeto</h1>
-<hr>
-<%= link_to 'Novo', new_project_path %>
-<table>
-	<thead>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Projetos</a>
+  </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Novo', new_project_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<table class="table table-hover table-bordered">
+  <thead>
 		<tr>
 			<th>Nome</th>
 			<th>Data inicial</th>
@@ -18,10 +27,16 @@
 			<td><%= project.end_date%></td>
 			<td><%= project.size%></td>
 			<td>
-				<%= link_to 'Editar', edit_project_path(project.id) %>
-				<%= link_to 'Exibir', show_project_path(project.id) %>
-				<%= link_to 'Excluir', destroy_project_path(project.id) %>
-						
+
+				<%= link_to edit_project_path(project.id), title: 'Editar' do  %>
+          			<span class="glyphicon glyphicon-pencil"></span>
+        		<% end %>
+        		<%= link_to show_project_path(project.id), title: 'Exibir' do  %>
+          			<span class="glyphicon glyphicon-eye-open"></span>
+        		<% end %>
+        		<%= link_to destroy_project_path(project.id), title: 'Excluir' do %>
+          			<span class="glyphicon glyphicon-trash"></span>
+        		<% end %>
 			</td>
 		</tr>
 		<% end %>

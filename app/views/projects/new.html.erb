@@ -1,3 +1,13 @@
-<h1>Novo projeto<h1>
-<hr>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Nova Projeto</a>
+  </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Cancelar', projects_path %></li>
+    </ul>
+  </div>
+</nav>
+
 <%= render 'form' %>

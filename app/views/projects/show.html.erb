@@ -1,20 +1,53 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Projetos: Exibindo</a>
+  </div>
+ 
 
-<p>
-	<h2> Nome: </h2>
-	<%= @project.name %>
-</p>
-<p>
-	<h2> Data de Início: </h2>
-	<%= @project.start_date %>
-</p>
-<p>
-	<h2> Date de Término:</h2> 
-	<%= @project.end_date %>
-</p>
-<p>
-	<h2> Tamanho total: </h2>
-	<%= @project.size %>
-</p>
+ <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+    	<li><%= link_to 'Cancelar', projects_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+	
+	<div class="panel panel-default">
+	  <div class="panel-heading">	
+		<h3 class="panel-title">Nome</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @project.name %></p>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">	
+		<h3 class="panel-title">Data de Início</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @project.start_date %></p>
+	  </div>
+	</div>
 
 
-<%= link_to 'Voltar', projects_path%> 
+	<div class="panel panel-default">
+	  <div class="panel-heading">	
+		<h3 class="panel-title">Data de Término</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @project.end_date %></p>
+	  </div>
+	</div>
+
+	<div class="panel panel-default">
+	  <div class="panel-heading">	
+		<h3 class="panel-title">Tamanho total</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @project.size %></p>
+	  </div>
+	</div>
+
+</div>

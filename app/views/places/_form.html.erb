@@ -1,13 +1,41 @@
-<%= form_for @local, url: @path_to_save, method: 'post' do |l|%>
-	<%= l.label :name %>
-	<%= l.text_field :name%>
-	<%= l.label :country %>
-	<%= l.text_field :country%>
-	<%= l.label :state %>
-	<%= l.text_field :state%>
-	<%= l.label :city %>
-	<%= l.text_field :city%>
-	<%= l.label :zipcode %>
-	<%= l.text_field :zipcode%>
-	<%= l.submit 'Salvar' %>
-<% end %>
+<div class="container">
+	<div class="col-md-6">	
+		<%= form_for @local, url: @path_to_save, method: 'post', html: {id: 'form-ability'} do |f|%>
+			<div class="form-group">
+				<%= f.label :nome %>
+				<%= f.text_field :name, class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :cidade %>
+				<%= f.text_field :city, class: 'form-control'%>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :pais %>
+				<%= f.text_field :country, class: 'form-control'%>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :estado %>
+				<%= f.text_field :state, class: 'form-control'%>
+			</div>
+
+
+			<div class="form-group">
+				<%= f.label :cep %>
+				<%= f.text_field :zipcode, class: 'form-control'%>
+			</div>
+
+			<div>
+		  		<%= f.submit 'Salvar', class: 'btn btn-success' %>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// $("#salvar").click(function(){
+	// 	$("#form-ability").submit();
+	// });
+</script>
