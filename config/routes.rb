@@ -46,13 +46,14 @@ ProjetoSemNome::Application.routes.draw do
  get'/local/show/:id' => 'places#show', as: 'show_local'
  post'/local/update/:id' => 'places#update', as: 'update_local'
 
- #routes for module_themes
+ #routes for module_theme
  get'/themes/home/project/:project_id' => 'themes#index', as: 'themes'
  get '/theme/new/project/:project_id' => 'themes#new', as: 'new_theme'
- post'/theme/new/project/:project_id' => 'themes#create', as: 'create_theme'
- get'/theme/new/project/:project_id' => 'themes#edit', as: 'edit_theme'
- get'/theme/new/project/:project_id/theme/:theme_id' => 'themes#destroy', as: 'destroy_theme'
- get'/theme/new/project/:project_id' => 'themes#show', as: 'show_theme'
- post'/theme/new/project/:project_id' => 'themes#update', as: 'update_theme'
+ post'/theme/create/project/:project_id' => 'themes#create', as: 'create_theme'
+ get'/theme/edit/:id' => 'themes#edit', as: 'edit_theme'
+ get'/theme/destroy/:id' => 'themes#destroy', as: 'destroy_theme'
+ get'/theme/show/:id' => 'themes#show', as: 'show_theme'
+ post'/theme/update/:id' => 'themes#update', as: 'update_theme'
+
 
 end

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Habilidades: Exibindo</a>
+  </div>
+
+
+ <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+    	<li><%= link_to 'Cancelar', themes_path(@theme.project_id) %></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Nome</h3>
+	  </div>
+	  <div class="panel-body">
+		<p><%= @theme.name %></p>
+	  </div>
+	</div>
+</div>

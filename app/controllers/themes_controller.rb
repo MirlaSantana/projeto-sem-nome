@@ -5,50 +5,50 @@ class ThemesController < ApplicationController
 	end
 
 	def new
-		@project = Project.new
-		@path_to_save = create_project_path
-
+		@theme = Theme.new
+		@path_to_save = create_theme_path(params[:project_id])
 	end
 
 	def show
-		@project = Project.find(params[:id])
+		@theme = Theme.find(params[:id])
 	end
+
+  def create
+  	@project = Project.find(params[:project_id])
+		@theme = Theme.new(params[:theme])
+    @theme.project_id = @project.id
+    # verificar essa parte
+    if @theme.save
+  		redirect_to themes_path(@project.id)
+  	else
+  		@path_to_save = create_theme_path(@project.id)
+  		render :new
+  	end
+  end
 
 	def edit
-		@project = Project.find(params[:id])
-		@path_to_save = update_project_path(params[:id])
-
-	end
-
-	def create
-		@project = Project.new(params[:project])
-		if @project.save
-			redirect_to projects_path
-		else
-			@path_to_save = create_project_path
-			render :new
-		end
-
+		@theme = Theme.find(params[:id])
+		@path_to_save = update_theme_path(params[:id])
 
 	end
 
 	def update
-		@project = Project.find(params[:id])
-		if @project.update_attributes(params[:project])
-			redirect_to projects_path
+		@theme = Theme.find(params[:id])
+		if @theme.update_attributes(params[:theme])
+			redirect_to themes_path(@theme.project_id)
 		else
-			@path_to_save = update_project_path(params[:id])
+			@path_to_save = update_theme_path(params[:id])
 			render :edit
 			end
 
 	end
 
 	def destroy
-		project = Project.find(params[:id])
-		project.destroy
+		theme = Theme.find(params[:id])
+		theme.destroy
 	rescue
 	ensure
-		redirect_to projects_path
+		redirect_to themes_path(theme.project_id)
 	end
 
 end
