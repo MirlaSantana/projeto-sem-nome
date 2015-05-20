@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="col-md-6">
+		<%= form_for @user_stories, url: @path_to_save, method: 'post', html: {id: 'form-user_stories'} do |t| %>
+		  <div class="form-group">
+		  	<%= t.label :business_value %>
+		    <%= t.text_field :business_value, class: 'form-control' %>
+		  
+		  	<%= t.label :description %>
+		    <%= t.text_field :description, class: 'form-control' %>
+		  
+		  	<%= t.label :status %>
+		    <%= t.text_field :status, class: 'form-control' %>
+		  
+		  	<%= t.label :story_points %>
+		    <%= t.text_field :story_points, class: 'form-control' %>
+		  </div>
+
+		  <div>
+		  	<%= t.submit 'Salvar', class: 'btn btn-success' %>
+		  </div>
+		<% end %>
+	</div>
+</div>
+
+

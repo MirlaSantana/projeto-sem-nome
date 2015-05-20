@@ -10,7 +10,8 @@ ProjetoSemNome::Application.routes.draw do
   post '/abilities/update/:id' => 'abilities#update', as: 'update_ability'
   get '/abilities/destroy/:id' => 'abilities#destroy', as: 'destroy_ability'
 
-  #routes for the function module
+  #routes for module_function
+
   get '/functions' => 'functions#index', as: 'functions'
   get '/functions/new' => 'functions#new', as: 'new_function'
   get '/functions/edit/:id' => 'functions#edit', as: 'edit_function'
@@ -28,6 +29,7 @@ ProjetoSemNome::Application.routes.draw do
  get '/language/show/:id' => 'languages#show', as: 'show_language'
  post '/language/update/:id' => 'languages#update', as: 'update_language'
 
+#routes for module_project
  get '/projects' => 'projects#index', as:'projects'
  get '/project/new' => 'projects#new', as: 'new_project'
  post '/project/create' => 'projects#create', as: 'create_project'
@@ -38,10 +40,30 @@ ProjetoSemNome::Application.routes.draw do
 
  #routes for module_local
  get'/places' => 'places#index', as: 'places'
- get '/places/new' => 'places#new', as: 'new_local'
- post'/places/create' => 'places#create', as: 'create_local'
- get'/places/edit/:id' => 'places#edit', as: 'edit_local'
- get'/places/destroy/:id' => 'places#destroy', as: 'destroy_local'
- get'/places/show/:id' => 'places#show', as: 'show_local'
- post'/places/update/:id' => 'places#update', as: 'update_local'
+ get '/local/new' => 'places#new', as: 'new_local'
+ post'/local/create' => 'places#create', as: 'create_local'
+ get'/local/edit/:id' => 'places#edit', as: 'edit_local'
+ get'/local/destroy/:id' => 'places#destroy', as: 'destroy_local'
+ get'/local/show/:id' => 'places#show', as: 'show_local'
+ post'/local/update/:id' => 'places#update', as: 'update_local'
+
+ #routes for module_theme
+ get'/themes/home/project/:project_id' => 'themes#index', as: 'themes'
+ get '/theme/new/project/:project_id' => 'themes#new', as: 'new_theme'
+ post'/theme/create/project/:project_id' => 'themes#create', as: 'create_theme'
+ get'/theme/edit/:id' => 'themes#edit', as: 'edit_theme'
+ get'/theme/destroy/:id' => 'themes#destroy', as: 'destroy_theme'
+ get'/theme/show/:id' => 'themes#show', as: 'show_theme'
+ post'/theme/update/:id' => 'themes#update', as: 'update_theme'
+
+ get'/user_stories/home/theme/:theme_id' => 'user_stories#index', as:'user_stories'
+ get'/user_stories/new/theme/:theme_id' => 'user_stories#new', as:'new_user_stories'
+ post'/user_stories/create/theme/:theme_id' => 'user_stories#create', as:'create_user_stories'
+ get'/user_stories/edit/:id' => 'user_stories#edit', as:'edit_user_stories'
+ get'/user_stories/destroy:id' => 'user_stories#destroy', as:'destroy_user_stories'
+ get'/user_stories/show/:id' => 'user_stories#show', as:'show_user_stories'
+ post'/user_stories/update/:id' => 'user_stories#update', as:'update_user_stories'
+
+
+
 end
